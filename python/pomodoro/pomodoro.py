@@ -13,7 +13,17 @@ def leiaSeg():
             print('Digite um valor válido')
             continue
            
-     
+
+def validaSim():
+    voltar = str(input('Digite "sim" para voltar ao trabalho: ')).lower().strip()
+    while voltar != 'sim':
+        print('Digite a palavra "SIM" para voltar ao trabalho')
+        voltar = str(input('Digite "sim" para voltar ao trabalho: ')).lower().strip()
+    
+    if voltar == 'sim':
+        return contador()
+
+
 def contador():
     try:
         t = leiaSeg()
@@ -26,6 +36,8 @@ def contador():
             t -= 1
         print('Está na hora de esticar o esqueleto, beber água ou café')
         sleep(10)
+        validaSim()
+
     except (KeyboardInterrupt):
         print('O usuário interrompeu o programa.')
 
