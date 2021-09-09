@@ -35,7 +35,7 @@ def contador():
             sleep(1)
             t -= 1
 
-        print('\033[34m''Está na hora de esticar o esqueleto, beber água ou café' + '\033[39m')
+        print('\033[34mEstá na hora de esticar o esqueleto, beber água ou café\033[39m')
         sleep(10)
         validaSim()
 
