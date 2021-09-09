@@ -6,19 +6,19 @@ def leiaSeg():
     
     while True:
         try:
-            t = int(input('Digite quantos minutos você vai trabalhar entre as pausas: ')) * 60
+            t = int(input('Digite quantos minutos você vai trabalhar até a próxima pausa: ')) * 60
             return t
         
         except (ValueError, TypeError):
-            print('Digite um valor válido')
+            print('\033[31mDigite um valor válido\033[39m')
             continue
            
 
 def validaSim():
     voltar = str(input('Digite "sim" para voltar ao trabalho: ')).lower().strip()
+
     while voltar != 'sim':
-        print('Digite a palavra "SIM" para voltar ao trabalho')
-        voltar = str(input('Digite "sim" para voltar ao trabalho: ')).lower().strip()
+        voltar = str(input('Digite \033[31m"sim"\033[39m para voltar ao trabalho: ')).lower().strip()
     
     if voltar == 'sim':
         return contador()
@@ -34,7 +34,8 @@ def contador():
             print(f'{min:02d}:{sec:02d}')
             sleep(1)
             t -= 1
-        print('Está na hora de esticar o esqueleto, beber água ou café')
+
+        print('\033[34m''Está na hora de esticar o esqueleto, beber água ou café' + '\033[39m')
         sleep(10)
         validaSim()
 
