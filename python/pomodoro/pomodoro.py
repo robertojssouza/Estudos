@@ -22,7 +22,7 @@ def contador():
             sec = t % 60
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f'{min:02d}:{sec:02d}')
-            sleep(0.2)
+            sleep(1)
             t -= 1
         print('Está na hora de esticar o esqueleto, beber água ou café')
         sleep(10)
