@@ -1,8 +1,11 @@
 from time import sleep
 import os
 
-def leiaSeg():
+def limpa_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+def leia_seg():
+    limpa_tela()
     
     while True:
         try:
@@ -14,7 +17,7 @@ def leiaSeg():
             continue
            
 
-def validaSim():
+def valida_sim():
     voltar = str(input('Digite "sim" para voltar ao trabalho: ')).lower().strip()
 
     while voltar != 'sim':
@@ -26,18 +29,20 @@ def validaSim():
 
 def contador():
     try:
-        t = leiaSeg()
+        t = leia_seg()
+        
         while t:
             min = t // 60
             sec = t % 60
-            os.system('cls' if os.name == 'nt' else 'clear')
+            limpa_tela()
             print(f'{min:02d}:{sec:02d}')
             sleep(1)
             t -= 1
 
+        limpa_tela()
         print('\033[34mEstá na hora de esticar o esqueleto, beber água ou café\033[39m')
         sleep(10)
-        validaSim()
+        valida_sim()
 
     except (KeyboardInterrupt):
         print('O usuário interrompeu o programa.')
